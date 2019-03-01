@@ -1,0 +1,40 @@
+/**
+ * Entry point:
+ * styles/App.scss
+ * 
+ * Based off of ITCSS Architecture with a few personal changes: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+ */
+@import "settings/variables";
+
+// Others must come after layout in order to call layout mixins
+@import "mixins/layout";
+@import "mixins/animations";
+@import "mixins/typography";
+
+// Set/Reset generic things
+@import "generic/reset";
+@import "generic/fonts";
+@import "generic/elements";
+
+// Order alphabetically
+@import "components/about";
+@import "components/all-posts";
+@import "components/all-posts-list";
+@import "components/back-to-top";
+@import "components/buttons";
+@import "components/footer";
+@import "components/header";
+@import "components/hero";
+@import "components/intro";
+@import "components/latest-posts";
+@import "components/layout";
+@import "components/forms";
+@import "components/main";
+@import "components/nav";
+@import "components/page";
+@import "components/post";
+@import "components/post-tease";
+
+// Include any vendor file(s)
+@import "vendor/nprogress";
+@import "vendor/prism";
