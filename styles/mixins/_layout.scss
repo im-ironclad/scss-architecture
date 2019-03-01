@@ -5,20 +5,12 @@
 // Default container is reg(ular)
 @mixin container($size: "reg", $centerHor: false, $centerVer: false) {
   display: block;
-  width: $width-main;
+  width: $width-lg;
   max-width: $max-width;
   height: auto;
   margin-right: auto;
   margin-left: auto;
 
-  @if ($size=="post") {
-    width: $width-post;
-  }
-
-  /**
-   * TODO:
-   * - Make this more robust
-   */
   @if ($centerVer==true) {
     display: flex;
     flex-direction: column;
@@ -29,17 +21,6 @@
     align-items: center;
   }
   //@include clear; //uncomment and use this mixin to clear floats when using float layouts
-}
-
-/**
- * Adds :after pseudo el and clears both
- */
-@mixin clear() {
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
 }
 
 /**
@@ -54,6 +35,7 @@
 
 /**
  * Creates spacing | Vertical
+ * - TODO: Add another value parameter to make 2
  */
 @mixin spacing($space: $spacing-rg) {
   padding-top: $space;
@@ -62,6 +44,7 @@
 
 /**
  * Creates padding | Horizontal
+ * - TODO: Add another value parameter to make 2
  */
 @mixin padding($pad: $indent-sm) {
   padding-right: $pad;

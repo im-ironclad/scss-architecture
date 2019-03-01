@@ -7,7 +7,6 @@
 }
 
 @mixin font($size, $bold: false) {
-  letter-spacing: 1px;
   font-weight: $font-regular;
 
   @if ($bold==true) {
@@ -29,21 +28,19 @@
   @else if ($size=="body") {
     @include font-size-rem(1.6, 2.4);
   }
-  @else if ($size=="tease-title") {
-    @include font-size-rem(1.6, 2.0);
-  }
   @else if ($size=="small") {
     @include font-size-rem(1.2, 2.0);
   }
 }
 
-// Independent mixin in case we want to add bold to a nested <span> etc.
-// Might remove if I can't find any other use than setting font-weight
-@mixin bold() {
-  font-weight: bold;
-}
-
-// Simple helper for nowrap white-space
+/**
+ * Simple helper for nowrap white-space on text
+ * 
+ * X: text-
+ *    wrapping
+ * 
+ * ✓: no-text-wrapping
+ */
 .nowrap {
   white-space: nowrap;
 }

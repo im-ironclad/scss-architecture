@@ -4,43 +4,20 @@
  * Create any animation mixins that you need
  */
 
-@mixin radialBgAnimation($color1: $color-primary, $color2: darken($color-primary, 15%)) {
-  background: radial-gradient(
-    circle,
-    $color1,
-    $color2
-  );
-  background-size: 200%;
-  background-position: 50%;
+/**
+ * Animation for fading content from 0 opacity to 1 (100%) opacity
+ * 
+ * To implement: @include fadeIn();
+ */
+@mixin fadeIn() {
+  animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0 1 forwards;
+}
 
-  &.animate {
-    animation: animateheaderbg 13s ease forwards alternate;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  @keyframes animateheaderbg {
-    0% {
-      background-position: 50%;
-    }
-    15% {
-      background-position: 0%;
-    }
-    30% {
-      background-position: 30% -20%;
-    }
-    45% {
-      background-position: 50%;
-    }
-    60% {
-      background-position: 70% 80%;
-    }
-    75% {
-      background-position: 100% 0%;
-    }
-    90% {
-      background-position: 0% 100%;
-    }
-    100% {
-      background-position: 50%;
-    }
+  100% {
+    opacity: 1;
   }
 }

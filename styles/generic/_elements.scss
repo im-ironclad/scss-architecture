@@ -1,5 +1,5 @@
 html {
-  font-size: 62.5%; // Sets up the Base 10 stuff
+  font-size: 62.5%; // Sets up the Base 10 stuff from mixins/_typography.scss
 }
 
 body {
@@ -14,12 +14,6 @@ body {
   -webkit-font-smoothing: antialiased;
   &.is-locked {
     overflow: hidden;
-  }
-
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-thumb,
-  &::-webkit-scrollbar-track {
-    width: 0;
   }
 }
 
@@ -54,7 +48,7 @@ select,
 textarea {
   padding: 0;
   border: 0;
-  // outline: 0;
+  outline: 0;
   border-radius: 0;
   background: none;
   font-size: 16px;
@@ -74,43 +68,6 @@ button {
   border-radius: 0;
   background: none;
   &:disabled {
-    cursor: inherit;
+    pointer-events: none;
   }
-}
-
-strong {
-  @include bold()
-}
-
-/**
- * Custom outline styles for focusing inputs, buttons and anchors
- */
-[type=text],
-[type=number],
-[type=search],
-[type=password],
-[type=email],
-[type=tel],
-[type=radio],
-[type=submit],
-select,
-textarea {
-  transition: outline-offset ease-in-out 0.1s;
-
-  &:hover,
-  &:focus {
-    outline: 1px solid $color-grey-dark;
-    outline-offset: -3px;
-  }
-}
-
-a:hover,
-a:focus {
-  transition: outline-offset ease-in-out 0.1s;
-  outline: 1px solid $color-white;
-  outline-offset: $spacing-sm;
-}
-
-.nowrap {
-  white-space: nowrap;
 }
