@@ -6,41 +6,24 @@
   line-height: $lineHeight + rem;
 }
 
-@mixin font($size, $bold: false) {
-  font-weight: $font-regular;
+@mixin font($size, $family: "default", $bold: false, $style: null) {
+  font-family: map-get($font-families, $family);
 
-  @if ($bold==true) {
+  @if ($bold == true) {
     font-weight: $font-bold;
   }
 
-  @if ($size=="heading-lg") {
-    @include font-size-rem(3.6, 4.4);
+  @if ($style == "italic") {
+    font-style: italic;
   }
+
   @if ($size=="heading") {
     @include font-size-rem(3.2, 4.0);
   }
-  @if ($size=="heading-sm") {
-    @include font-size-rem(2.4, 3.2);
-  }
-  @else if ($size=="body-lg") {
-    @include font-size-rem(1.8, 2.6);
-  }
   @else if ($size=="body") {
-    @include font-size-rem(1.6, 2.4);
+    @include font-size-rem(1.8, 2.4);
   }
   @else if ($size=="small") {
     @include font-size-rem(1.2, 2.0);
   }
-}
-
-/**
- * Simple helper for nowrap white-space on text
- * 
- * X: text-
- *    wrapping
- * 
- * ✓: no-text-wrapping
- */
-.nowrap {
-  white-space: nowrap;
 }

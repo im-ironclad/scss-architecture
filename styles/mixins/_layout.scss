@@ -2,14 +2,18 @@
  * Layout Mixins
  */
 
-// Default container is reg(ular)
+// Default container is rg(ular)
 @mixin container($size: "reg", $centerHor: false, $centerVer: false) {
   display: block;
-  width: $width-lg;
+  width: $cont-rg;
   max-width: $max-width;
-  height: auto;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
+
+  @if ($size=="lg") {
+    width: $cont-lg;
+  }
 
   @if ($centerVer==true) {
     display: flex;

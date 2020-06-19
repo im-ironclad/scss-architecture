@@ -13,37 +13,42 @@ $screen-lg-max: $screen-xl-min - 1;
 
 /**
  * Spacing
- * - You can adjust these however you would like or the design requires
  */
-$spacing-xs: 10px;
-$spacing-sm: 20px;
-$spacing-rg: 50px;
-$spacing-lg: 100px;
-$spacing-xl: 150px;
+$spacing-1: 10px;
+$spacing-2: 20px;
+$spacing-3: 30px;
+$spacing-4: 50px;
+$spacing-5: 100px;
 
 /**
  * Layout
- * - These are examples, you can create whatever
- * variables you would like or that the design requires
  */
 $min-page-width: 320px; // This should always be 320px, minimum phone size
 $max-page-width: 1900px; // This can be whatever you want (i.e. 1200px or 1440px)
-$width-sm: 750px;
-$width-reg: 1000px;
-$width-lg: 1440px;
+$cont-rg: 1140px;
 $max-width: 90%;
 $gutter: 5%;
 
 /**
  * Colors
- * - These are typically per the design
  */
-$color-white: #ffffff;
-$color-offwhite: #f2f2f2;
-$color-grey: #777777;
-$color-grey-dark: #333333;
+$colors: (
+  "white": #FFFFFF,
+  "offwhite": #F2F2F2,
+  "black": #000000,
+  "red-400": #FF0000
+);
 
-/* Font */
-$font-family-primary: "Roboto", Helvetica, Arial, sans-serif;
+/**
+ * Font
+ */
+$font-families: (
+  "default": #{'Helvetica, sans-serif'}
+);
+
+$font-light: 300;
 $font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
 $font-bold: 700;
+$font-black: 900;
